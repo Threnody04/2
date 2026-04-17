@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品 - 个人介绍</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- 顶部导航栏 -->
+    <nav class="glass-nav" id="mainNav">
+        <div class="nav-content">
+            <div class="logo">Designer.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="portfolio.html" class="active">作品</a></li>
+            </ul>
+            <a href="contact.html" class="btn-contact">联系我</a>
+        </div>
+        <div class="nav-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </div>
+    </nav>
+
+    <main class="portfolio-page">
+
+        <!-- =========================================
+             视图 1：主大厅 (默认显示)
+             ========================================= -->
+        <div id="portfolio-main" class="page-view">
+            <header class="portfolio-header">
+                <h1 class="section-title fade-up-element">我的作品</h1>
+                <p class="section-subtitle fade-up-element">探索我不同领域的设计实践</p>
+            </header>
+
+            <!-- 类别选择器 (添加了 onclick 触发切换视图) -->
+            <section class="category-selector">
+                <div class="glass-card category-card fade-up-element" onclick="openCategory('app', 'App 设计', 'iOS & Android 原生体验')">
+                    <div class="icon">📱</div>
+                    <h3>App 设计</h3>
+                    <p>iOS & Android 原生体验</p>
+                </div>
+                <div class="glass-card category-card fade-up-element" onclick="openCategory('web', 'Web 网页设计', 'SaaS 与 响应式官网')">
+                    <div class="icon">💻</div>
+                    <h3>Web 网页设计</h3>
+                    <p>SaaS 与 响应式官网</p>
+                </div>
+                <div class="glass-card category-card fade-up-element" onclick="openCategory('3d', '3D & 动效', '空间计算与微交互')">
+                    <div class="icon">🧊</div>
+                    <h3>3D & 动效</h3>
+                    <p>空间计算与微交互</p>
+                </div>
+            </section>
+
+            <!-- 典型案例展示 (保持不变) -->
+            <section class="featured-works">
+                <h2 class="section-title fade-up-element" style="font-size: 2rem;">典型案例展示</h2>
+                <div class="works-grid">
+                    <div class="glass-card work-card fade-up-element" onclick="openModal('project1')">
+                        <div class="work-image" style="background: linear-gradient(45deg, #e0c3fc 0%, #8ec5fc 100%);">
+                            <span class="img-placeholder-text">金融 App (点击查看)</span>
+                        </div>
+                        <div class="work-info">
+                            <h3>金融类 App 概念设计</h3>
+                            <p>iOS / 视觉重构 / 动效设计</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================
+             视图 2：分类二级页面 (初始隐藏)
+             ========================================= -->
+        <div id="portfolio-category" class="page-view" style="display: none;">
+
+            <!-- 返回按钮 -->
+            <div style="max-width: 1000px; margin: 0 auto 20px; padding: 0 5%;">
+                <button class="btn-back glass-card" onclick="backToMain()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+                    返回作品大厅
+                </button>
+            </div>
+
+            <header class="portfolio-header">
+                <h1 id="cat-title" class="section-title">分类标题</h1>
+                <p id="cat-desc" class="section-subtitle">分类描述</p>
+            </header>
+
+            <!-- App 分类专属瀑布流 -->
+            <div id="grid-app" class="works-grid cat-grid" style="display: none;">
+                <div class="glass-card work-card fade-up-element" onclick="openModal('project1')">
+                    <div class="work-image" style="background: linear-gradient(45deg, #e0c3fc 0%, #8ec5fc 100%);"><span class="img-placeholder-text">金融 App</span></div>
+                    <div class="work-info"><h3>金融类 App 设计</h3><p>iOS</p></div>
+                </div>
+                <div class="glass-card work-card fade-up-element" onclick="openModal('project_app2')">
+                    <div class="work-image" style="background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);"><span class="img-placeholder-text">社交 App</span></div>
+                    <div class="work-info"><h3>音乐社交 App 概念</h3><p>Android / 动效</p></div>
+                </div>
+            </div>
+
+            <!-- Web 分类专属瀑布流 -->
+            <div id="grid-web" class="works-grid cat-grid" style="display: none;">
+                <div class="glass-card work-card fade-up-element" onclick="openModal('project2')">
+                    <div class="work-image" style="background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);"><span class="img-placeholder-text">SaaS 数据看板</span></div>
+                    <div class="work-info"><h3>SaaS 后台设计系统</h3><p>Web端 / B端组件库</p></div>
+                </div>
+                <div class="glass-card work-card fade-up-element" onclick="openModal('project_web2')">
+                    <div class="work-image" style="background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);"><span class="img-placeholder-text">品牌官网</span></div>
+                    <div class="work-info"><h3>独立设计师品牌响应式官网</h3><p>Web端 / 视觉</p></div>
+                </div>
+            </div>
+
+            <!-- 3D 分类专属瀑布流 -->
+            <div id="grid-3d" class="works-grid cat-grid" style="display: none;">
+                <div class="glass-card work-card fade-up-element" onclick="openModal('project_3d1')">
+                    <div class="work-image" style="background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);"><span class="img-placeholder-text">空间计算 UI</span></div>
+                    <div class="work-info"><h3>visionOS 概念界面</h3><p>3D / 空间交互</p></div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- =========================================
+         作品详情弹窗 (Modal)
+         ========================================= -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="glass-card modal-container">
+            <!-- 关闭按钮 -->
+            <button class="modal-close" onclick="closeModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
+            </button>
+
+            <!-- 左侧图片区 (可独立滚动) -->
+            <div class="modal-left" style="background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);">
+                <div class="modal-img-placeholder">细节图占位</div>
+            </div>
+
+            <!-- 右侧文字详情区 -->
+            <div class="modal-right">
+                <h2 id="modal-title">项目名称加载中...</h2>
+                <div class="modal-tags">
+                    <span>标签一</span>
+                    <span>标签二</span>
+                    <span>标签三</span>
+                </div>
+
+                <div class="modal-desc">
+                    <h3>项目背景</h3>
+                    <p>占位占位占位占位占位占位占位占位占位占位占位占位占位</p>
+
+                    <h3>我的角色</h3>
+                    <p>占位占位占位占位占位占位占位占位占位占位占位占位占位</p>
+
+                    <h3>设计亮点</h3>
+                    <p>占位占位占位占位占位占位占位占位占位占位占位占位占位</p>
+                </div>
+
+                <a href="#" class="btn-contact" style="display:inline-block; margin-top: 20px;">访问线上原型</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

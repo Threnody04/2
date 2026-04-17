@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我 - 个人介绍</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 背景环境光 -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2" style="background: #fccb90;"></div> <!-- 换个暖色调，更亲切 -->
+    </div>
+
+    <!-- 顶部导航栏 (注意：联系我按钮去掉了，因为当前就在联系页) -->
+    <nav class="glass-nav" id="mainNav">
+        <div class="nav-content">
+            <div class="logo">Designer.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="portfolio.html">作品</a></li>
+            </ul>
+            <a href="contact.html" class="btn-contact" class="active">联系我</a>
+        </div>
+        <div class="nav-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+        </div>
+    </nav>
+
+    <!-- 联系我页面主体 -->
+    <main class="contact-page">
+        <header class="contact-header">
+            <h1 class="section-title fade-up-element">随时准备开启新灵感。</h1>
+            <p class="section-subtitle fade-up-element">无论是一个激动人心的项目，还是一句简单的问候，都欢迎与我联系。</p>
+        </header>
+
+        <div class="contact-layout">
+            
+            <!-- 左侧：联系方式与社交媒体 -->
+            <div class="glass-card contact-info fade-up-element">
+                <h2>Let's Talk! </h2>
+                <p class="info-desc">我很乐意与志同道合的人交流。你可以通过表单给我发邮件，或者直接通过以下方式找到我。</p>
+                
+                <div class="direct-contact">
+                    <!-- 电话 -->
+                    <div class="contact-item wechat-hover">
+                        <span class="icon">📱</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+86 138 8888 8888</p>
+                        </div>
+                    </div>
+                    <!-- 邮箱 -->
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>**********@outlook.com</p>
+                        </div>
+                    </div>
+
+                    <!-- 微信 (带有悬停显示二维码的微交互) -->
+                    <div class="contact-item wechat-hover">
+                        <span class="icon">💬</span>
+                        <div>
+                            <h4>WeChat</h4>
+                            <p>Design_With_Me</p>
+                        </div>
+                        <!-- 隐藏的二维码玻璃卡片 -->
+                        <div class="qr-code-glass">
+                            <span class="img-placeholder-text" style="font-size: 1rem;">二维码占位图</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 社交媒体链接 (圆形玻璃按钮) -->
+                <div class="social-links">
+                    <a href="https://space.bilibili.com/391248568" class="social-btn" title="Bilibili">哔</a>
+                    <a href="#" class="social-btn" title="小红书">小</a>
+                    <a href="#" class="social-btn" title="站酷">Z</a>
+                </div>
+            </div>
+
+            <!-- 右侧：内凹玻璃质感表单 -->
+            <div class="glass-card contact-form fade-up-element">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('由于是静态页面，发送功能待后端接入。但UI已经完美呈现！');">
+                    <div class="form-group">
+                        <label for="name">你的称呼</label>
+                        <input type="text" id="name" class="glass-input" placeholder="怎么称呼你？" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">电子邮箱</label>
+                        <input type="email" id="email" class="glass-input" placeholder="example@mail.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">留言内容</label>
+                        <textarea id="message" class="glass-input" rows="5" placeholder="输入你想对我说的话..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">发送信息 🚀</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer>
+        <p>© 2026 数媒241 武嵩浩 网站信息架构与布局练习作业.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

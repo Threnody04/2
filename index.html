@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 个人介绍</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 动态背景渐变色块（用于衬托玻璃质感） -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- 顶部导航栏 -->
+    <nav class="glass-nav" id="mainNav">
+        <!-- 正常展开时的内容 -->
+        <div class="nav-content">
+            <div class="logo">Designer.</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="portfolio.html">作品</a></li>
+            </ul>
+            <a href="contact.html" class="btn-contact">联系我</a>
+        </div>
+        <!-- 缩小后的回到顶部箭头 (默认隐藏) -->
+        <div class="nav-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </div>
+    </nav>
+
+    <!-- 首屏区域（固定在底部，等待被上方内容遮盖） -->
+    <section class="hero-sticky">
+        <div class="hero-content">
+            <h1>你好，我是<br><span class="gradient-text">UI/UX 设计师</span></h1>
+            <p>专注数字产品体验，用设计连接美感与逻辑</p>
+            <div class="scroll-indicator">
+                <span>滑动探索</span>
+                <div class="mouse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下方滑动内容区（带有强毛玻璃效果，像幕布一样滑上去覆盖首屏） -->
+    <main class="content-reveal">
+
+        <!-- 1. 关键数据 (便当盒布局) - 移到了上方 -->
+        <section class="bento-metrics">
+            <div class="glass-card bento-item">
+                <h3>0</h3>
+                <p>年设计经验</p>
+            </div>
+            <div class="glass-card bento-item">
+                <h3>0</h3>
+                <p>落地项目</p>
+            </div>
+            <div class="glass-card bento-item">
+                <h3>100%</h3>
+                <p>客户好评率</p>
+            </div>
+            <div class="glass-card bento-item">
+                <h3>0</h3>
+                <p>设计奖项</p>
+            </div>
+        </section>
+
+        <!-- 2. 合作方Logo无缝滚动 - 移到了下方，并加了玻璃框 -->
+        <section class="logos-section">
+            <div class="glass-card logos-box">
+                <p class="section-subtitle">曾经合作过的团队</p>
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        <!-- 占位Logo，使用纯文字模拟 -->
+                        <div class="logo-item">Apple</div>
+                        <div class="logo-item">Tencent</div>
+                        <div class="logo-item">Alibaba</div>
+                        <div class="logo-item">ByteDance</div>
+                        <div class="logo-item">Google</div>
+                        <!-- 复制一份用于无缝循环 -->
+                        <div class="logo-item">Apple</div>
+                        <div class="logo-item">Tencent</div>
+                        <div class="logo-item">Alibaba</div>
+                        <div class="logo-item">ByteDance</div>
+                        <div class="logo-item">Google</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心能力 (保持不变) -->
+        <section class="capabilities">
+            <h2 class="section-title">核心能力</h2>
+            <div class="cards-grid">
+                <div class="glass-card">
+                    <div class="icon-placeholder">🎨</div>
+                    <h3>UI 视觉设计</h3>
+                    <p>打造现代化、极具苹果液态风格的界面视觉体系。</p>
+                </div>
+                <div class="glass-card">
+                    <div class="icon-placeholder">🧠</div>
+                    <h3>UX 交互体验</h3>
+                    <p>梳理复杂逻辑，提供直觉式的用户体验路径。</p>
+                </div>
+                <div class="glass-card">
+                    <div class="icon-placeholder">✨</div>
+                    <h3>动效与3D</h3>
+                    <p>赋予界面生命力，丝滑微交互与空间计算视觉。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精选作品 (保持不变) -->
+        <section class="featured-works">
+            <h2 class="section-title">精选作品</h2>
+            <div class="works-grid">
+                <!-- 作品1 -->
+                <div class="glass-card work-card">
+                    <div class="work-image" style="background: linear-gradient(45deg, #e0c3fc 0%, #8ec5fc 100%);">
+                        <span class="img-placeholder-text">项目一 封面图占位</span>
+                    </div>
+                    <div class="work-info">
+                        <h3>项目一</h3>
+                        <p>标签一 / 标签二 / 标签三</p>
+                    </div>
+                </div>
+                <!-- 作品2 -->
+                <div class="glass-card work-card">
+                    <div class="work-image" style="background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);">
+                        <span class="img-placeholder-text">项目二 封面图占位</span>
+                    </div>
+                    <div class="work-info">
+                        <h3>项目二</h3>
+                        <p>标签一 / 标签二 / 标签三</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部 -->
+        <footer>
+            <p>© 2026 数媒241 武嵩浩 网站信息架构与布局练习作业.</p>
+        </footer>
+    </main>
+
+    <!-- 引入外部全局交互脚本 -->
+    <script src="main.js"></script>
+</body>
+</html>
