@@ -1224,3 +1224,37 @@ textarea.glass-input {
         bottom: 80px;
     }
 }
+/* =========================================
+   全局滚动条样式 (苹果极简半透明风)
+   ========================================= */
+
+/* 兼容 Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+/* 兼容 WebKit 浏览器 (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px; /* 滚动条的整体宽度 */
+    height: 10px; /* 横向滚动条的高度 */
+}
+
+/* 滚动条轨道 (透明，透出你的背景渐变色块) */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* 滚动条滑块 (半透明磨砂质感) */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15); /* 淡淡的深色，与浅色背景对比 */
+    border-radius: 10px; /* 药丸状圆角 */
+    /* 下面这两行是神仙属性：用透明边框把滑块往内挤，制造出悬浮感 */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+    /* 鼠标悬停在滑块上时的效果 */
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.3); /* 变深一点，提供交互反馈 */
+    }
